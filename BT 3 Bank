@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT // or any other open-source license that applies to your code.
+pragma solidity ^0.8.0;
+
+contract Bank {
+    int private bal;
+
+    constructor() {
+        bal = 100;
+    }
+
+    function getBalance() public view returns (int) {
+        return bal;
+    }
+
+    function withdraw(int amt) public {
+        require(amt <= bal, "Insufficient Balance");
+        bal -= amt;
+    }
+
+    function deposit(int amt) public {
+        bal += amt;
+    }
+}
