@@ -12,7 +12,9 @@ def fibonacci(n):
     
     for _ in range (2,n+1):
         a,b = b,a+b
-        stepCount += 3
+        stepCount += 2
+    
+    stepCount +=1
     return b,stepCount
     
 n=int(input("Enter the fibonacci term to find : "))
